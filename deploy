@@ -1,0 +1,5 @@
+#!/bin/bash
+
+docker build -t registry.gitlab.com/mplusmn/backend/mplus/website:latest .
+docker push registry.gitlab.com/mplusmn/backend/mplus/website:latest
+ssh wplus@woovoo.com "cd ~/docker/mplus && docker-compose pull website && docker-compose up -d website"
